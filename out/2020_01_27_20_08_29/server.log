@@ -1,0 +1,7 @@
+[01-27 20:08:30,171, 801] dbExecutor.Executor create MySqlConfiguration
+[01-27 20:08:30,354, 984] dbExecutor.Executor createSessionFactory
+[01-27 20:08:40,610, 11240] main.Main singup servlet
+[01-27 20:08:40,626, 11256] main.Main singin servlet
+[01-27 20:08:40,626, 11256] main.Main admin servlet
+[01-27 20:08:40,626, 11256] main.Main chat servlet
+[01-27 20:08:40,773, 11403] main.Main Server started
