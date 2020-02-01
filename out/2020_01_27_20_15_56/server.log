@@ -1,7 +1,0 @@
-[01-27 20:15:57,146, 1000] dbExecutor.Executor create MySqlConfiguration
-[01-27 20:15:57,331, 1185] dbExecutor.Executor createSessionFactory
-[01-27 20:16:06,311, 10165] main.Main singup servlet
-[01-27 20:16:06,327, 10181] main.Main singin servlet
-[01-27 20:16:06,327, 10181] main.Main admin servlet
-[01-27 20:16:06,327, 10181] main.Main chat servlet
-[01-27 20:16:06,442, 10296] main.Main Server started
