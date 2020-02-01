@@ -5,6 +5,7 @@ import dbExecutor.DBException;
 import dataSets.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import services.LogService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -16,10 +17,11 @@ import java.io.IOException;
    //     После этого польователь с таким логином считается зарегистрированным.
 public class SignUpServlet extends HttpServlet {
   private final AccountService accountService;
-  private static final Logger logger = LogManager.getLogger(SignUpServlet.class.getName());
+  private Logger logger;
 
   public SignUpServlet(AccountService accountService) {
     this.accountService = accountService;
+    logger = LogService.getLogger(SignUpServlet.class.getName());
   }
 
   public void doPost(HttpServletRequest request,

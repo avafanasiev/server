@@ -2,7 +2,6 @@ package dbExecutor;
 
 import dataSets.*; // почему при import dataSets.UsersDataSet ошибка,а так ошибки нет dataSets.*?
 import interfaces.DAOHandler;
-import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -12,6 +11,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.internal.SessionFactoryImpl;
 import org.hibernate.service.ServiceRegistry;
+import services.LogService;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -19,13 +19,14 @@ import java.sql.SQLException;
 public class Executor {
     private static final String hibernate_show_sql = "true";
     private static final String hibernate_hbm2ddl_auto = "create";
-    private static final Logger logger = LogManager.getLogger(Executor.class.getName());
+    private Logger logger;
 
     private final SessionFactory sessionFactory;
 
     public Executor() {
-        Configuration configuration = getMySqlConfiguration();//getH2Configuration();
-        sessionFactory = createSessionFactory(configuration);
+      Configuration configuration = getMySqlConfiguration();//getH2Configuration();
+      sessionFactory = createSessionFactory(configuration);
+      logger = LogService.getLogger(Executor.class.getName());
     }
 
     private Configuration getMySqlConfiguration() {
@@ -63,7 +64,7 @@ public class Executor {
       return configuration;
   }
 
-    private static SessionFactory createSessionFactory(Configuration configuration) {
+    private SessionFactory createSessionFactory(Configuration configuration) {
       logger.info("createSessionFactory");
       StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder();
       builder.applySettings(configuration.getProperties());

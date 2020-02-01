@@ -7,13 +7,15 @@ import org.eclipse.jetty.websocket.api.annotations.OnWebSocketClose;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketConnect;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketMessage;
 import org.eclipse.jetty.websocket.api.annotations.WebSocket;
+import services.LogService;
 
 @SuppressWarnings("UnusedDeclaration")
 @WebSocket
 public class ChatWebSocket {
     private Session session;
-    private static final Logger logger = LogManager.getLogger(ChatWebSocket.class.getName());
+    private Logger logger;
     public ChatWebSocket() {
+        logger = LogService.getLogger(ChatWebSocket.class.getName());
     }
 
     @OnWebSocketConnect

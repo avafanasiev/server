@@ -5,6 +5,7 @@ import dbExecutor.DBException;
 import dataSets.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import services.LogService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -26,10 +27,11 @@ import java.io.IOException;
 
 public class SignInServlet extends HttpServlet {
   private final AccountService accountService;
-  private static final Logger logger = LogManager.getLogger(SignInServlet.class.getName());
+  private Logger logger;
 
   public SignInServlet(AccountService accountService) {
     this.accountService = accountService;
+    logger = LogService.getLogger(SignInServlet.class.getName());
   }
 
   public void doPost(HttpServletRequest request,
