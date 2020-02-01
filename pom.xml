@@ -76,7 +76,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>main.Main</mainClass>
+                            <mainClass>afanasievald.main.Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
