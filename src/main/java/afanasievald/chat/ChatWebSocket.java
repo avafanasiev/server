@@ -26,7 +26,7 @@ public class ChatWebSocket {
     @OnWebSocketMessage
     public void onMessage(String data) {
         logger.info("ChatWebSocket send message");
-        sendString(data);
+        sendString(data); // send only to self
     }
 
     @OnWebSocketClose
@@ -37,7 +37,7 @@ public class ChatWebSocket {
         try {
             session.getRemote().sendString(data);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println(e.getMessage()); //dont use it in prod
             logger.error(e.getMessage());
         }
     }
