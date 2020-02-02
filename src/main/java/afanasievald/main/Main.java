@@ -25,7 +25,7 @@ import java.lang.management.ManagementFactory;
 public class Main {
   private static Logger logger;
 
-  public static void main(String[] args) throws Exception {
+  public static void main(String[] args) throws Exception { // переписать все это на спрингбут
     logger = LogService.getLogger(Main.class.getName());
 
     AccountService accountService = new AccountServiceImpl(10);
