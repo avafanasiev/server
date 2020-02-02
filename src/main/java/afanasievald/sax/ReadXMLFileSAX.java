@@ -7,7 +7,7 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.IOException;
 
-public class ReadXMLFileSAX {
+public class ReadXMLFileSAX { //разве что в качестае тренировки рефлекшена, есть более гуманные  и надежные способы десериализации
   public static Object readXML(String xmlFile) {
     try {
       SAXParserFactory factory = SAXParserFactory.newInstance();
